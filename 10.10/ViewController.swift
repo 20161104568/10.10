@@ -60,13 +60,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func zyjdelete(_ sender: Any) {
-        zyj.text = "0"
+        zyj.text = ""
         
        
-        firstOperand = 0.0
+        firstOperand = 0
         
         
-        secondOperand = 0.0
+        secondOperand = 0
         
         
         decimalPointFlag = false
@@ -86,6 +86,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func zyjadd(_ sender: Any) {
+        
     }
     
     @IBAction func zyjreduce(_ sender: Any) {
