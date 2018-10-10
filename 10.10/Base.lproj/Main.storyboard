@@ -66,9 +66,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anC-dn-7xi">
-                                <rect key="frame" x="302" y="296" width="43" height="30"/>
+                                <rect key="frame" x="309" y="296" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="delete"/>
+                                <state key="normal" title="AC"/>
                                 <connections>
                                     <action selector="zyjdelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="btO-jH-Z5l"/>
                                 </connections>
@@ -162,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="-720"/>
+            <point key="canvasLocation" x="558" y="-779"/>
         </scene>
     </scenes>
 </document>
