@@ -10,15 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var zyj: UITextField!
-    var firstOperand: Double = 0.0
+    var  pd = 0 // 判断加减乘除
+    var re = 0
+    var result = 0
+    var zyjadd = 0
+    var zyjreduce = 0
+    var zyjcheng = 0
+    var zyjchu = 0
+    var a = 0
+    var b = 0
+    var c = 0
+    var x = 0
     
-    var secondOperand: Double = 0.0
     
-    var decimalPointFlag: Bool = false
+    //var decimalPointFlag: Bool = false
    
-    var isSecond: Bool = false
+    //var isSecond: Bool = false
   
-    var operatorFlag: String = ""
+    //var operatorFlag: String = ""
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -63,19 +72,19 @@ class ViewController: UIViewController {
         zyj.text = ""
         
        
-        firstOperand = 0
+        a = 0
         
         
-        secondOperand = 0
+        b = 0
         
         
-        decimalPointFlag = false
+        //decimalPointFlag = false
         
         
-        isSecond = false
+        //isSecond = false
         
        
-        operatorFlag = ""
+        //operatorFlag = ""
             
         
         
@@ -86,6 +95,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func zyjadd(_ sender: Any) {
+      
+        let a = Double(zyj.text!)!
+        let b = Double(zyj.text!)!
+        let c = a + b
+        result = String(c)
+        zyj.text = ""
+        pd = 1
+        re = 0
         
     }
     
@@ -99,6 +116,32 @@ class ViewController: UIViewController {
     }
     
     @IBAction func zyjequal(_ sender: Any) {
+        let a = Double(zyj.text!)!
+        let b = Double(zyj.text!)!
+        if pd == 1
+        {
+            let c = a + b
+            zyj.text = String(c)
+        }
+        if pd == 2
+        {
+            let c = a - b
+            zyj.text = String(c)
+        }
+        if pd == 3
+        {
+            let c = a * b
+            zyj.text = String(c)
+        }
+        if pd == 4
+        {
+            let c = a / b
+            zyj.text = String(c)
+        }
+        
+    }
+    
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,5 +149,4 @@ class ViewController: UIViewController {
     }
 
 
-}
 
