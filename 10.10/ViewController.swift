@@ -9,30 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     @IBOutlet weak var zyj: UITextField!
-    var  pd = 0 // 判断加减乘除
-    var re = 0
+    var firstNumber = 0
+    
+    var secondNumber = 0
+    
     var result = 0
-    var zyjadd = 0
-    var zyjreduce = 0
-    var zyjcheng = 0
-    var zyjchu = 0
-    var a = 0
-    var b = 0
-    var c = 0
-    var x = 0
     
-    
+    var pd = 0       //判断加减乘除
     //var decimalPointFlag: Bool = false
-   
+    
     //var isSecond: Bool = false
-  
+    
     //var operatorFlag: String = ""
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     @IBAction func zyj1(_ sender: Any) {
+        
         zyj.text = zyj.text! + "1"
     }
     
@@ -68,14 +64,20 @@ class ViewController: UIViewController {
         zyj.text = zyj.text! + "9"
     }
     
+    
+    @IBAction func zyj0(_ sender: Any) {
+        zyj.text = zyj.text! + "0"
+    }
+    
+    
     @IBAction func zyjdelete(_ sender: Any) {
         zyj.text = ""
         
-       
-        a = 0
+        
+        firstNumber = 0
         
         
-        b = 0
+        secondNumber = 0
         
         
         //decimalPointFlag = false
@@ -83,70 +85,83 @@ class ViewController: UIViewController {
         
         //isSecond = false
         
-       
+        
         //operatorFlag = ""
-            
         
         
-    }
-    
-    @IBAction func zyj0(_ sender: Any) {
-        zyj.text = zyj.text! + "0"
     }
     
     @IBAction func zyjadd(_ sender: Any) {
-      
-        let a = Double(zyj.text!)!
-        let b = Double(zyj.text!)!
-        let c = a + b
-        result = String(c)
-        zyj.text = ""
-        pd = 1
-        re = 0
-        
+        if zyj.text == ""{
+            zyj.text = "0"
+            pd = 1
+        }else{
+            firstNumber = Int(zyj.text!)!
+            zyj.text = String(firstNumber)
+            zyj.text = ""
+            pd = 1
+        }
     }
     
     @IBAction func zyjreduce(_ sender: Any) {
+        if zyj.text == ""{
+            zyj.text = "0"
+            pd = 2
+        }else{
+            firstNumber = Int(zyj.text!)!
+            zyj.text = String(firstNumber)
+            zyj.text = ""
+            pd = 2
+        }
     }
     
     @IBAction func zyjcheng(_ sender: Any) {
+        if zyj.text == ""{
+            zyj.text = "0"
+            pd = 3
+        }else{
+            firstNumber = Int(zyj.text!)!
+            zyj.text = String(firstNumber)
+            zyj.text = ""
+            pd = 3
+        }
     }
     
     @IBAction func zyjchu(_ sender: Any) {
+        if zyj.text == ""{
+            zyj.text = "0"
+            pd = 4
+        }else{
+            firstNumber = Int(zyj.text!)!
+            zyj.text = String(firstNumber)
+            zyj.text = ""
+            pd = 4
+        }
     }
     
     @IBAction func zyjequal(_ sender: Any) {
-        let a = Double(zyj.text!)!
-        let b = Double(zyj.text!)!
-        if pd == 1
-        {
-            let c = a + b
-            zyj.text = String(c)
-        }
-        if pd == 2
-        {
-            let c = a - b
-            zyj.text = String(c)
-        }
-        if pd == 3
-        {
-            let c = a * b
-            zyj.text = String(c)
-        }
-        if pd == 4
-        {
-            let c = a / b
-            zyj.text = String(c)
+        secondNumber = Int(zyj.text!)!
+        zyj.text = String(secondNumber)
+        zyj.text = "0"
+        if pd == 1{
+            result = firstNumber + secondNumber
+        }else if pd == 2{
+            result = firstNumber - secondNumber
+        }else if pd == 3{
+            result = firstNumber * secondNumber
+        }else if pd == 4{
+            result = firstNumber / secondNumber
         }
         
-    }
-    
-        
+        zyj.text = String(result)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    
+}
 
 
 
