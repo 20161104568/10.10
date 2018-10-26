@@ -28,7 +28,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     @IBAction func zyj1(_ sender: Any) {
-        
         zyj.text = zyj.text! + "1"
     }
     
@@ -79,16 +78,6 @@ class ViewController: UIViewController {
         
         secondNumber = 0
         
-        
-        //decimalPointFlag = false
-        
-        
-        //isSecond = false
-        
-        
-        //operatorFlag = ""
-        
-        
     }
     
     @IBAction func zyjadd(_ sender: Any) {
@@ -96,7 +85,12 @@ class ViewController: UIViewController {
             zyj.text = "0"
             pd = 1
         }else{
-            firstNumber = Int(zyj.text!)!
+            let firstNumber = Double(zyj.text!)!
+            let secondNumber = Double(zyj.text!)!
+            let result = firstNumber + secondNumber
+        
+            
+           // firstNumber = Int(zyj.text!)!
             zyj.text = String(firstNumber)
             zyj.text = ""
             pd = 1
@@ -140,20 +134,32 @@ class ViewController: UIViewController {
     }
     
     @IBAction func zyjequal(_ sender: Any) {
-        secondNumber = Int(zyj.text!)!
-        zyj.text = String(secondNumber)
-        zyj.text = "0"
-        if pd == 1{
-            result = firstNumber + secondNumber
-        }else if pd == 2{
-            result = firstNumber - secondNumber
-        }else if pd == 3{
-            result = firstNumber * secondNumber
-        }else if pd == 4{
-            result = firstNumber / secondNumber
+        let firstNumber = Double(zyj.text!)!
+        let secondNumber = Double(zyj.text!)!
+        //secondNumber = Int(zyj.text!)!
+        //zyj.text = String(secondNumber)
+        //zyj.text = "0"
+        if pd == 1
+        {
+            let result = firstNumber + secondNumber
+            zyj.text = String(result)
+        }
+        if pd == 2
+        {
+            let result = firstNumber - secondNumber
+            zyj.text = String(result)
+        }
+        if pd == 3
+        {
+            let result = firstNumber * secondNumber
+            zyj.text = String(result)
+        }
+        else if pd == 4
+        {
+            let result = firstNumber / secondNumber
+            zyj.text = String(result)
         }
         
-        zyj.text = String(result)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
