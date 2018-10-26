@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     @IBAction func zyj1(_ sender: Any) {
+        
         zyj.text = zyj.text! + "1"
     }
     
@@ -68,6 +69,9 @@ class ViewController: UIViewController {
         zyj.text = zyj.text! + "0"
     }
     
+    @IBAction func point(_ sender: Any) {
+        zyj.text = zyj.text! + "."
+    }
     
     @IBAction func zyjdelete(_ sender: Any) {
         zyj.text = ""
@@ -85,12 +89,12 @@ class ViewController: UIViewController {
             zyj.text = "0"
             pd = 1
         }else{
-            let firstNumber = Double(zyj.text!)!
-            let secondNumber = Double(zyj.text!)!
-            let result = firstNumber + secondNumber
+           // let firstNumber = Double(zyj.text!)!
+           // let secondNumber = Double(zyj.text!)!
+            //let result = firstNumber + secondNumber
         
             
-           // firstNumber = Int(zyj.text!)!
+            firstNumber = Int(zyj.text!)!
             zyj.text = String(firstNumber)
             zyj.text = ""
             pd = 1
@@ -134,11 +138,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func zyjequal(_ sender: Any) {
-        let firstNumber = Double(zyj.text!)!
-        let secondNumber = Double(zyj.text!)!
-        //secondNumber = Int(zyj.text!)!
-        //zyj.text = String(secondNumber)
-        //zyj.text = "0"
+        //let firstNumber = Double(zyj.text!)!
+        //let secondNumber = Double(zyj.text!)!
+        secondNumber = Int(zyj.text!)!
+        zyj.text = String(secondNumber)
+        zyj.text = "0"
         if pd == 1
         {
             let result = firstNumber + secondNumber
