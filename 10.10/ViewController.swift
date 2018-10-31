@@ -11,9 +11,13 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var zyj: UITextField!
-    var firstNumber = 0
+    var firstNumber:Double = 0.0//第一个数
     
-    var secondNumber = 0
+    var secondNumber:Double = 0.0//第二个数
+    
+    var  point: Bool = false//标记是否输入小数点
+    
+    var isSecond: Bool = false//是否输入第二个数
     
     var result = 0
     
@@ -70,7 +74,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func point(_ sender: Any) {
-        zyj.text = zyj.text! + "."
+        if !point {
+            zyj.text = zyj.text! + "."
+            if isSecond {
+                secondNumber = (zyj.text! as NSString).doubleValue
+            }else {
+                firstNumber = (zyj.text! as NSString).doubleValue
+            }
+            
+            point = !point
+        }
+        //zyj.text = zyj.text! + "."
     }
     
     @IBAction func zyjdelete(_ sender: Any) {
@@ -81,6 +95,10 @@ class ViewController: UIViewController {
         
         
         secondNumber = 0
+        
+        point = false
+        
+        isSecond = false
         
     }
     
@@ -94,7 +112,7 @@ class ViewController: UIViewController {
             //let result = firstNumber + secondNumber
         
             
-            firstNumber = Int(zyj.text!)!
+            firstNumber = Double(zyj.text!)!
             zyj.text = String(firstNumber)
             zyj.text = ""
             pd = 1
@@ -106,7 +124,7 @@ class ViewController: UIViewController {
             zyj.text = "0"
             pd = 2
         }else{
-            firstNumber = Int(zyj.text!)!
+            firstNumber = Double(zyj.text!)!
             zyj.text = String(firstNumber)
             zyj.text = ""
             pd = 2
@@ -118,7 +136,7 @@ class ViewController: UIViewController {
             zyj.text = "0"
             pd = 3
         }else{
-            firstNumber = Int(zyj.text!)!
+            firstNumber = Double(zyj.text!)!
             zyj.text = String(firstNumber)
             zyj.text = ""
             pd = 3
@@ -130,7 +148,7 @@ class ViewController: UIViewController {
             zyj.text = "0"
             pd = 4
         }else{
-            firstNumber = Int(zyj.text!)!
+            firstNumber = Double(zyj.text!)!
             zyj.text = String(firstNumber)
             zyj.text = ""
             pd = 4
@@ -140,7 +158,7 @@ class ViewController: UIViewController {
     @IBAction func zyjequal(_ sender: Any) {
         //let firstNumber = Double(zyj.text!)!
         //let secondNumber = Double(zyj.text!)!
-        secondNumber = Int(zyj.text!)!
+        secondNumber = Double(zyj.text!)!
         zyj.text = String(secondNumber)
         zyj.text = "0"
         if pd == 1
