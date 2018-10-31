@@ -19,7 +19,9 @@ class ViewController: UIViewController {
     
     var isSecond: Bool = false//是否输入第二个数
     
-    var result = 0
+    var sign = 0//判断zyj.text前是否存在符号
+    
+    var result:Double = 0.0
     
     var pd = 0       //判断加减乘除
     //var decimalPointFlag: Bool = false
@@ -32,45 +34,94 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     @IBAction func zyj1(_ sender: Any) {
-        
+        if sign == 1{
+            zyj.text = "1"
+        }
+        else{
         zyj.text = zyj.text! + "1"
     }
+}
     
     @IBAction func zyj2(_ sender: Any) {
-        zyj.text = zyj.text! + "2"
+        if sign == 1{
+            zyj.text = "2"
+        }
+        else{
+            zyj.text = zyj.text! + "2"
+        }
     }
     
     @IBAction func zyj3(_ sender: Any) {
-        zyj.text = zyj.text! + "3"
+        if sign == 1{
+            zyj.text = "3"
+        }
+        else{
+            zyj.text = zyj.text! + "3"
+        }
     }
     
     @IBAction func zyj4(_ sender: Any) {
-        zyj.text = zyj.text! + "4"
+        if sign == 1{
+            zyj.text = "4"
+        }
+        else{
+            zyj.text = zyj.text! + "4"
+        }
     }
     
     @IBAction func zyj5(_ sender: Any) {
-        zyj.text = zyj.text! + "5"
+        if sign == 1{
+            zyj.text = "5"
+        }
+        else{
+            zyj.text = zyj.text! + "5"
+        }
     }
     
     @IBAction func zyj6(_ sender: Any) {
-        zyj.text = zyj.text! + "6"
+        if sign == 1{
+            zyj.text = "6"
+        }
+        else{
+            zyj.text = zyj.text! + "6"
+        }
     }
     
     @IBAction func zyj7(_ sender: Any) {
-        zyj.text = zyj.text! + "7"
+        if sign == 1{
+            zyj.text = "7"
+        }
+        else{
+            zyj.text = zyj.text! + "7"
+        }
     }
     
     @IBAction func zyj8(_ sender: Any) {
-        zyj.text = zyj.text! + "8"
+        if sign == 1{
+            zyj.text = "8"
+        }
+        else{
+            zyj.text = zyj.text! + "8"
+        }
     }
     
     @IBAction func zyj9(_ sender: Any) {
-        zyj.text = zyj.text! + "9"
+        if sign == 1{
+            zyj.text = "9"
+        }
+        else{
+            zyj.text = zyj.text! + "9"
+        }
     }
     
     
     @IBAction func zyj0(_ sender: Any) {
-        zyj.text = zyj.text! + "0"
+        if sign == 1{
+            zyj.text = "0"
+        }
+        else{
+            zyj.text = zyj.text! + "0"
+        }
     }
     
     @IBAction func point(_ sender: Any) {
@@ -90,15 +141,15 @@ class ViewController: UIViewController {
     @IBAction func zyjdelete(_ sender: Any) {
         zyj.text = ""
         
-        
         firstNumber = 0
-        
         
         secondNumber = 0
         
         point = false
         
         isSecond = false
+        
+        
         
     }
     
@@ -117,6 +168,7 @@ class ViewController: UIViewController {
             zyj.text = ""
             pd = 1
         }
+        point = !point
     }
     
     @IBAction func zyjreduce(_ sender: Any) {
@@ -129,6 +181,7 @@ class ViewController: UIViewController {
             zyj.text = ""
             pd = 2
         }
+        point = !point
     }
     
     @IBAction func zyjcheng(_ sender: Any) {
@@ -141,6 +194,7 @@ class ViewController: UIViewController {
             zyj.text = ""
             pd = 3
         }
+        point = !point
     }
     
     @IBAction func zyjchu(_ sender: Any) {
@@ -153,6 +207,7 @@ class ViewController: UIViewController {
             zyj.text = ""
             pd = 4
         }
+        point = !point
     }
     
     @IBAction func zyjequal(_ sender: Any) {
