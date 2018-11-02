@@ -15,13 +15,15 @@ class ViewController: UIViewController {
     
     var secondNumber:Double = 0.0//第二个数
     
-    var  point: Bool = false//标记是否输入小数点
+    var thirdNumber:Double = 0.0//第三个数
+    
+    var d = 0//标记是否输入小数点
     
     var isSecond: Bool = false//是否输入第二个数
     
     var sign = 0//判断zyj.text前是否存在符号
     
-    var result:Double = 0.0
+    var result:Double = 0.00
     
     var pd = 0       //判断加减乘除
     //var decimalPointFlag: Bool = false
@@ -125,15 +127,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func point(_ sender: Any) {
-        if !point {
+        if d == 0{
             zyj.text = zyj.text! + "."
-            if isSecond {
-                secondNumber = (zyj.text! as NSString).doubleValue
-            }else {
-                firstNumber = (zyj.text! as NSString).doubleValue
+            d = 1
             }
             
-            point = !point
+        else{
+            zyj.text = zyj.text! + "."
+            
         }
         //zyj.text = zyj.text! + "."
     }
@@ -141,11 +142,11 @@ class ViewController: UIViewController {
     @IBAction func zyjdelete(_ sender: Any) {
         zyj.text = ""
         
-        firstNumber = 0
+        firstNumber = 0.0
         
-        secondNumber = 0
+        secondNumber = 0.0
         
-        point = false
+        d = 0
         
         isSecond = false
         
@@ -158,17 +159,22 @@ class ViewController: UIViewController {
             zyj.text = "0"
             pd = 1
         }else{
-           // let firstNumber = Double(zyj.text!)!
-           // let secondNumber = Double(zyj.text!)!
-            //let result = firstNumber + secondNumber
+             //firstNumber = Double(zyj.text!)!
+             //secondNumber = Double(zyj.text!)!
+             //zyj.text = String(firstNumber)
+             //thirdNumber = firstNumber + secondNumber
+            //let firstNumber = Double(zyj.text!)!
+            //let secondNumber = Double(zyj.text!)!
+            //let thirdNumber = firstNumber + secondNumber
         
             
             firstNumber = Double(zyj.text!)!
             zyj.text = String(firstNumber)
             zyj.text = ""
             pd = 1
+            d = 0
         }
-        point = !point
+        
     }
     
     @IBAction func zyjreduce(_ sender: Any) {
@@ -180,8 +186,9 @@ class ViewController: UIViewController {
             zyj.text = String(firstNumber)
             zyj.text = ""
             pd = 2
+            d = 0
         }
-        point = !point
+        
     }
     
     @IBAction func zyjcheng(_ sender: Any) {
@@ -193,8 +200,9 @@ class ViewController: UIViewController {
             zyj.text = String(firstNumber)
             zyj.text = ""
             pd = 3
+            d = 0
         }
-        point = !point
+        
     }
     
     @IBAction func zyjchu(_ sender: Any) {
@@ -206,36 +214,39 @@ class ViewController: UIViewController {
             zyj.text = String(firstNumber)
             zyj.text = ""
             pd = 4
+            d = 0
         }
-        point = !point
+        
     }
     
     @IBAction func zyjequal(_ sender: Any) {
-        //let firstNumber = Double(zyj.text!)!
-        //let secondNumber = Double(zyj.text!)!
+        //firstNumber = Double(zyj.text!)!
+        //secondNumber = Double(zyj.text!)!
+        //thirdNumber = Double(zyj.text!)!
         secondNumber = Double(zyj.text!)!
         zyj.text = String(secondNumber)
         zyj.text = "0"
         if pd == 1
         {
             let result = firstNumber + secondNumber
-            zyj.text = String(result)
+            zyj.text = String(format:"%.2lf",result)
         }
         if pd == 2
         {
             let result = firstNumber - secondNumber
-            zyj.text = String(result)
+            zyj.text = String(format:"%.2lf",result)
         }
         if pd == 3
         {
             let result = firstNumber * secondNumber
-            zyj.text = String(result)
+            zyj.text = String(format:"%.2lf",result)
         }
         else if pd == 4
         {
             let result = firstNumber / secondNumber
-            zyj.text = String(result)
+            zyj.text = String(format:"%.2lf",result)
         }
+        d = 0
         
     }
     override func viewDidLoad() {
