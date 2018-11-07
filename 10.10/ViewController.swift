@@ -133,7 +133,8 @@ class ViewController: UIViewController {
             }
             
         else{
-            zyj.text = zyj.text! + "."
+            zyj.text = zyj.text!
+            
             
         }
         //zyj.text = zyj.text! + "."
@@ -159,15 +160,6 @@ class ViewController: UIViewController {
             zyj.text = "0"
             pd = 1
         }else{
-             //firstNumber = Double(zyj.text!)!
-             //secondNumber = Double(zyj.text!)!
-             //zyj.text = String(firstNumber)
-             //thirdNumber = firstNumber + secondNumber
-            //let firstNumber = Double(zyj.text!)!
-            //let secondNumber = Double(zyj.text!)!
-            //let thirdNumber = firstNumber + secondNumber
-        
-            
             firstNumber = Double(zyj.text!)!
             zyj.text = String(firstNumber)
             zyj.text = ""
@@ -220,9 +212,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func zyjequal(_ sender: Any) {
-        //firstNumber = Double(zyj.text!)!
-        //secondNumber = Double(zyj.text!)!
-        //thirdNumber = Double(zyj.text!)!
         secondNumber = Double(zyj.text!)!
         zyj.text = String(secondNumber)
         zyj.text = "0"
