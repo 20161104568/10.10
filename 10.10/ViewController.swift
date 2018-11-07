@@ -165,7 +165,9 @@ class ViewController: UIViewController {
             zyj.text = ""
             pd = 1
             d = 0
+            
         }
+          //zyj.text = zyj.text! + "+"
         
     }
     
@@ -180,6 +182,7 @@ class ViewController: UIViewController {
             pd = 2
             d = 0
         }
+          //zyj.text = zyj.text! + "-"
         
     }
     
@@ -194,7 +197,7 @@ class ViewController: UIViewController {
             pd = 3
             d = 0
         }
-        
+          //zyj.text = zyj.text! + "*"
     }
     
     @IBAction func zyjchu(_ sender: Any) {
@@ -208,30 +211,42 @@ class ViewController: UIViewController {
             pd = 4
             d = 0
         }
-        
+          //zyj.text = zyj.text! + "/"
     }
     
     @IBAction func zyjequal(_ sender: Any) {
-        secondNumber = Double(zyj.text!)!
-        zyj.text = String(secondNumber)
-        zyj.text = "0"
+        //secondNumber = Double(zyj.text!)!
+        //zyj.text = String(secondNumber)
+        //zyj.text = "0"
         if pd == 1
         {
+            secondNumber = Double(zyj.text!)!
+            zyj.text = String(secondNumber)
+            zyj.text = "0"
             let result = firstNumber + secondNumber
             zyj.text = String(format:"%.2lf",result)
         }
         if pd == 2
         {
+            secondNumber = Double(zyj.text!)!
+            zyj.text = String(secondNumber)
+            zyj.text = "0"
             let result = firstNumber - secondNumber
             zyj.text = String(format:"%.2lf",result)
         }
         if pd == 3
         {
+            secondNumber = Double(zyj.text!)!
+            zyj.text = String(secondNumber)
+            zyj.text = "0"
             let result = firstNumber * secondNumber
             zyj.text = String(format:"%.2lf",result)
         }
         else if pd == 4
         {
+            secondNumber = Double(zyj.text!)!
+            zyj.text = String(secondNumber)
+            zyj.text = "0"
             let result = firstNumber / secondNumber
             zyj.text = String(format:"%.2lf",result)
         }
