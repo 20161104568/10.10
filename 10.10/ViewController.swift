@@ -239,8 +239,15 @@ class ViewController: UIViewController {
             secondNumber = Double(zyj.text!)!
             zyj.text = String(secondNumber)
             zyj.text = "0"
+            if secondNumber == 0
+            {
+                zyj.text = "0不能作除数"
+            }
+            else
+            {
             let result = firstNumber / secondNumber
             zyj.text = String(format:"%.2lf",result)
+            }
         }
         else if pd == 5
         {
@@ -254,8 +261,15 @@ class ViewController: UIViewController {
         }
         else if pd == 7
         {
+            if firstNumber == 0
+            {
+                zyj.text = "0不能作分母"
+            }
+            else
+            {
             let result = 1/firstNumber
             zyj.text = String(format:"%.2lf",result)
+            }
         }
         d = 0
         
