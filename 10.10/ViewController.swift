@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     var isSecond: Bool = false//是否输入第二个数
     
-    var sign = 0//判断zyj.text前是否存在符号
+    //var sign = 0//判断zyj.text前是否存在符号
     
     var result:Double = 0.00
     
@@ -36,94 +36,45 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     @IBAction func zyj1(_ sender: Any) {
-        if sign == 1{
-            zyj.text = "1"
-        }
-        else{
         zyj.text = zyj.text! + "1"
-    }
 }
     
     @IBAction func zyj2(_ sender: Any) {
-        if sign == 1{
-            zyj.text = "2"
-        }
-        else{
             zyj.text = zyj.text! + "2"
-        }
     }
     
     @IBAction func zyj3(_ sender: Any) {
-        if sign == 1{
-            zyj.text = "3"
-        }
-        else{
             zyj.text = zyj.text! + "3"
-        }
     }
     
+    
     @IBAction func zyj4(_ sender: Any) {
-        if sign == 1{
-            zyj.text = "4"
-        }
-        else{
             zyj.text = zyj.text! + "4"
-        }
     }
     
     @IBAction func zyj5(_ sender: Any) {
-        if sign == 1{
-            zyj.text = "5"
-        }
-        else{
             zyj.text = zyj.text! + "5"
-        }
     }
     
     @IBAction func zyj6(_ sender: Any) {
-        if sign == 1{
-            zyj.text = "6"
-        }
-        else{
             zyj.text = zyj.text! + "6"
-        }
     }
     
     @IBAction func zyj7(_ sender: Any) {
-        if sign == 1{
-            zyj.text = "7"
-        }
-        else{
             zyj.text = zyj.text! + "7"
-        }
     }
     
     @IBAction func zyj8(_ sender: Any) {
-        if sign == 1{
-            zyj.text = "8"
-        }
-        else{
             zyj.text = zyj.text! + "8"
-        }
     }
     
     @IBAction func zyj9(_ sender: Any) {
-        if sign == 1{
-            zyj.text = "9"
-        }
-        else{
             zyj.text = zyj.text! + "9"
-        }
     }
     
     
     @IBAction func zyj0(_ sender: Any) {
-        if sign == 1{
-            zyj.text = "0"
-        }
-        else{
             zyj.text = zyj.text! + "0"
-        }
     }
     
     @IBAction func point(_ sender: Any) {
@@ -214,6 +165,47 @@ class ViewController: UIViewController {
           //zyj.text = zyj.text! + "/"
     }
     
+    @IBAction func pf(_ sender: Any) {
+        if zyj.text == ""{
+            zyj.text = "0"
+            pd = 5
+        }else{
+            firstNumber = Double(zyj.text!)!
+            zyj.text = String(firstNumber)
+            zyj.text = ""
+            pd = 5
+            d = 0
+        }
+        
+    }
+    
+    @IBAction func lf(_ sender: Any) {
+        if zyj.text == ""{
+            zyj.text = "0"
+            pd = 6
+        }else{
+            firstNumber = Double(zyj.text!)!
+            zyj.text = String(firstNumber)
+            zyj.text = ""
+            pd = 6
+            d = 0
+        }
+        
+    }
+    
+    @IBAction func reciprocal(_ sender: Any) {
+        if zyj.text == ""{
+            zyj.text = "0"
+            pd = 7
+        }else{
+            firstNumber = Double(zyj.text!)!
+            zyj.text = String(firstNumber)
+            zyj.text = ""
+            pd = 7
+            d = 0
+        }
+        
+    }
     @IBAction func zyjequal(_ sender: Any) {
         //secondNumber = Double(zyj.text!)!
         //zyj.text = String(secondNumber)
@@ -248,6 +240,21 @@ class ViewController: UIViewController {
             zyj.text = String(secondNumber)
             zyj.text = "0"
             let result = firstNumber / secondNumber
+            zyj.text = String(format:"%.2lf",result)
+        }
+        else if pd == 5
+        {
+            let result = firstNumber * firstNumber
+            zyj.text = String(format:"%.2lf",result)
+        }
+        else if pd == 6
+        {
+            let result = firstNumber * firstNumber * firstNumber
+            zyj.text = String(format:"%.2lf",result)
+        }
+        else if pd == 7
+        {
+            let result = 1/firstNumber
             zyj.text = String(format:"%.2lf",result)
         }
         d = 0
