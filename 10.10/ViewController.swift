@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     var isSecond: Bool = false//是否输入第二个数
     
-    var result:Double = 0.00
+    var result:Double = 0.0
     
     var pd = 0       //判断加减乘除
     
@@ -104,9 +104,12 @@ class ViewController: UIViewController {
             firstNumber = Double(zyj.text!)!
             zyj.text = String(firstNumber)
             zyj.text = ""
+           // zyj.text = zyj.text! + "+"
+            //a = zyj.text!
             pd = 1
             d = 0
         }
+       // exit(0)
     }
     
     //减法
@@ -218,15 +221,17 @@ class ViewController: UIViewController {
             zyj.text = String(secondNumber)
             zyj.text = "0"
             let result = firstNumber + secondNumber
-            zyj.text = String(format:"%.2lf",result)
+            zyj.text = String(firstNumber) + "+" + String(secondNumber) + "=" + String(format:"%.2lf",result)
+            
         }
-        if pd == 2    //减法
+        if pd == 2//减法
         {
+            
             secondNumber = Double(zyj.text!)!
             zyj.text = String(secondNumber)
             zyj.text = "0"
             let result = firstNumber - secondNumber
-            zyj.text = String(format:"%.2lf",result)
+            zyj.text = String(firstNumber) + "-" + String(secondNumber) + "=" + String(format:"%.2lf",result)
         }
         if pd == 3    //乘法
         {
@@ -234,23 +239,23 @@ class ViewController: UIViewController {
             zyj.text = String(secondNumber)
             zyj.text = "0"
             let result = firstNumber * secondNumber
-            zyj.text = String(format:"%.2lf",result)
+            zyj.text = String(firstNumber) + "*" + String(secondNumber) + "=" + String(format:"%.2lf",result)
         }
         else if pd == 4    //除法
         {
-            
-            if secondNumber == 0
-            {
-                zyj.text = "0不能作除数"
-            }
-            else
-            {
             secondNumber = Double(zyj.text!)!
             zyj.text = String(secondNumber)
             zyj.text = "0"
-            let result = firstNumber / secondNumber
-            zyj.text = String(format:"%.2lf",result)
+            if zyj.text == "0"
+            {
+                zyj.text = "除数不能为0"
             }
+            else{
+            
+            let result = firstNumber / secondNumber
+            zyj.text = String(firstNumber) + "/" + String(secondNumber) + "=" + String(format:"%.2lf",result)
+            }
+            
         }
         else if pd == 5    //平方
         {
