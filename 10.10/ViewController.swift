@@ -20,8 +20,6 @@ class ViewController: UIViewController {
     
     var d = 0//标记是否输入小数点
     
-    var isSecond: Bool = false//是否输入第二个数
-    
     var result:Double = 0.0
     
     var pd = 0       //判断加减乘除
@@ -89,7 +87,6 @@ class ViewController: UIViewController {
         firstNumber = 0.0
         secondNumber = 0.0
         d = 0
-        isSecond = false
     }
     
     //加法
@@ -104,12 +101,9 @@ class ViewController: UIViewController {
             firstNumber = Double(zyj.text!)!
             zyj.text = String(firstNumber)
             zyj.text = ""
-           // zyj.text = zyj.text! + "+"
-            //a = zyj.text!
             pd = 1
             d = 0
         }
-       // exit(0)
     }
     
     //减法
@@ -243,15 +237,15 @@ class ViewController: UIViewController {
         }
         else if pd == 4    //除法
         {
-            secondNumber = Double(zyj.text!)!
-            zyj.text = String(secondNumber)
-            zyj.text = "0"
+            
             if zyj.text == "0"
             {
                 zyj.text = "除数不能为0"
             }
             else{
-            
+            secondNumber = Double(zyj.text!)!
+            zyj.text = String(secondNumber)
+            zyj.text = "0"
             let result = firstNumber / secondNumber
             zyj.text = String(firstNumber) + "/" + String(secondNumber) + "=" + String(format:"%.2lf",result)
             }
